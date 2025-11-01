@@ -1,4 +1,4 @@
-🎧 CSU Multi-Agent Support Bot
+## 🎧 CSU Multi-Agent Support Bot
 This project implements a comprehensive, multi-agent support system using LangGraph and Retrieval-Augmented Generation (RAG). The bot classifies user queries into IT or HR issues, uses dedicated knowledge bases (PDFs) to find answers, handles small talk, and automatically escalates unanswered or uncategorized queries by creating a support ticket.
 
 The system is split into two files:
@@ -48,27 +48,27 @@ Create a file named .env in the root directory of your project and populate it w
 Ini, TOML
 OPENAI_API_KEY="your_secret_openai_api_key_here"
 
-# Optional: You can specify models if desired
-# OPENAI_EMBEDDING_MODEL="text-embedding-ada-002"
-# OPENAI_CHAT_MODEL="gpt-4o-mini"
+## Optional: You can specify models if desired
+## OPENAI_EMBEDDING_MODEL="text-embedding-ada-002"
+## OPENAI_CHAT_MODEL="gpt-4o-mini"
 
 4. Update Hardcoded File Paths in agent_backend.py
 The core backend file uses absolute paths that must be updated to match your local file structure. This is mandatory.
 Open agent_backend.py and modify the paths in the CONFIGURATION and KNOWLEDGE BASE SETUP sections.
 Python
 
-# In agent_backend.py, modify these paths:
-# --------------------------------------------------------------------------
-# CONFIGURATION SECTION (Line ~28)
-# Replace with the actual absolute path where you want the ticket log to be saved.
-TICKET_LOG_FILE = r"C:\path\to\your\project\support_tickets.csv"
+## In agent_backend.py, modify these paths:
+## --------------------------------------------------------------------------
+## CONFIGURATION SECTION (Line ~28)
+## Replace with the actual absolute path where you want the ticket log to be saved.
+TICKET_LOG_FILE = r""
 
 # --------------------------------------------------------------------------
-# KNOWLEDGE BASE SETUP SECTION (Lines ~60-61)
-# Replace with the actual absolute paths to your IT and HR PDF files.
-IT_KB = _load_or_build_kb(r"C:\path\to\your\project\CSU_GLB_IT_Support.pdf", "./chroma_it_store")
-HR_KB = _load_or_build_kb(r"C:\path\to\your\project\CSU_GLB_HR_Policy.pdf",  "./chroma_hr_store")
-# Note: The folders "./chroma_it_store" and "./chroma_hr_store" will be created automatically.
+## KNOWLEDGE BASE SETUP SECTION (Lines ~60-61)
+## Replace with the actual absolute paths to your IT and HR PDF files.
+IT_KB = _load_or_build_kb(r"", "./chroma_it_store")
+HR_KB = _load_or_build_kb(r"",  "./chroma_hr_store")
+## Note: The folders "./chroma_it_store" and "./chroma_hr_store" will be created automatically.
 ▶️ Running the Application
 Once setup is complete, run the Streamlit application from your terminal:
 Bash
