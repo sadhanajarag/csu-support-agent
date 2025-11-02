@@ -12,3 +12,5 @@
 ".env" 
 "myenv/" 
 "Screenshots/" 
+"*.db" 
+"*.sqlite3" 
